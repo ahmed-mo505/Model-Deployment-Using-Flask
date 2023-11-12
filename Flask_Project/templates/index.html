@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+
+
+<body>
+    <h1>Feature Input Form</h1>
+    <form method="POST">
+        <label for="CRIM">CRIM (Crime Rate):</label>
+        <input type="text" name="CRIM" required><br>
+
+        <label for="ZN">ZN (Proportion of Residential Land Zoned for Large Lots):</label>
+        <input type="text" name="ZN" required><br>
+
+        <label for="INDUS">INDUS (Proportion of Non-Retail Business Acres):</label>
+        <input type="text" name="INDUS" required><br>
+
+        <label for="CHAS">CHAS (Charles River Dummy Variable):</label>
+        <input type="text" name="CHAS" required><br>
+
+        <label for="NOX">NOX (Nitrogen Oxide Concentration):</label>
+        <input type="text" name="NOX" required><br>
+
+        <label for="RM">RM (Average Number of Rooms per Dwelling):</label>
+        <input type="text" name="RM" required><br>
+
+        <label for="AGE">AGE (Proportion of Owner-Occupied Units Built Before 1940):</label>
+        <input type="text" name="AGE" required><br>
+
+        <label for="DIS">DIS (Weighted Distance to Employment Centers):</label>
+        <input type="text" name="DIS" required><br>
+
+        <label for="RAD">RAD (Index of Accessibility to Radial Highways):</label>
+        <input type="text" name="RAD" required><br>
+
+        <label for="TAX">TAX (Property Tax Rate):</label>
+        <input type="text" name="TAX" required><br>
+
+        <label for="PTRATIO">PTRATIO (Pupil-Teacher Ratio):</label>
+        <input type="text" name="PTRATIO" required><br>
+
+        <label for="B">B (Proportion of Residents of African American Descent):</label>
+        <input type="text" name="B" required><br>
+
+        <label for="LSTAT">LSTAT (Percentage of Lower Status Population):</label>
+        <input type="text" name="LSTAT" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    {% if result %}
+    <h2>Prediction Result: ${{ result }}</h2>
+    {% endif %}
+</body>
+
+
+
+
+
+{% endblock %}
